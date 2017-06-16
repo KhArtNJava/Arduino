@@ -5,7 +5,7 @@ SDK_PATH ?= $(abspath ../../)
 BUILD_PATH = build
 LWIP_SRCS = $(patsubst %.c,$(BUILD_PATH)/%.o,$(wildcard */*.c)) $(patsubst %.c,$(BUILD_PATH)/%.o,$(wildcard */*/*.c))
 
-LWIP_INCLUDE = -Ibuild -I$(SDK_PATH)/include -I$(SDK_PATH)/lwip/include
+LWIP_INCLUDE = -Ibuild -I$(SDK_PATH)/include -I$(SDK_PATH)/lwip/include -Ic:/temp/arduino-1.6.12/hardware/esp8266com/arduino/tools/sdk/lwip/include/ -Ic:/temp/arduino-1.6.12/hardware/esp8266com/arduino/tools/sdk/include/
 BUILD_FLAGS = -c -Os -g -Wpointer-arith -Wno-implicit-function-declaration -Wl,-EL -fno-inline-functions -nostdlib -mlongcalls -mtext-section-literals -falign-functions=4 -MMD -std=gnu99 -ffunction-sections -fdata-sections
 BUILD_DEFINES = -D__ets__ -DICACHE_FLASH -U__STRICT_ANSI__ -DLWIP_OPEN_SRC
 
